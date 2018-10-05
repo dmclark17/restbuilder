@@ -706,10 +706,10 @@ class RstTranslator(TextTranslator):
         format.
         """
         if 'refuri' not in node:
-            self.add_text('`%s`_' % node['name'])
+            self.add_text('`%s`_' % node['names'])
             raise nodes.SkipNode
         elif 'internal' not in node:
-            self.add_text('`%s <%s>`_' % (node['name'], node['refuri']))
+            self.add_text('`%s <%s>`_' % (node['names'], node['refuri']))
             raise nodes.SkipNode
         elif 'reftitle' in node:
             # Include node as text, rather than with markup.
